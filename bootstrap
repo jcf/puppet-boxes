@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+gems=(vagrant puppet)
+
+for gem in $gems; do
+  (( $+commands[$gem] )) || gem install $gem
+done
+
+vagrant up
